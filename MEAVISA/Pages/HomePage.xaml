@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MEAVISA.Pages.HomePage"
+             BackgroundColor="#f9f9f9"
+             >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <VerticalStackLayout Grid.Row="0" Padding="10, 100, 10, 10" HorizontalOptions="Center">
+            <Label Text="MEAVISA" Style="{StaticResource H1}" />
+            <Label Text="Saiba Aquilo Que Precisa" Style="{StaticResource H2}" />
+            <Button Text="Quero Receber" BackgroundColor="{StaticResource Secondary}" TextColor="{StaticResource Tertiary}" CornerRadius="10" Margin="0, 40, 0, 0" Clicked="OnRegisterButtonClicked" />
+
+            <VerticalStackLayout Margin="0, 75, 0, 0"  HorizontalOptions="Center" VerticalOptions="Center" x:Name="containerss">
+                <Label Text="Você pode receber notificações de:" TextColor="{StaticResource Primary}" Style="{StaticResource ulLabel}" FontSize="20"/>
+            </VerticalStackLayout>
+
+            <Label Margin="0, 40, 0, 0" Text="Escolha sobre o que quer saber e receba atualizações no WhatsApp ou E-mail" HorizontalTextAlignment="Center" WidthRequest="300" />
+        </VerticalStackLayout>
+
+
+
+        <VerticalStackLayout Grid.Row="1" VerticalOptions="End" Margin="0, 0, 0, 25">
+            <Label Text="© 2024 MEAVISA" FontSize="12" TextColor="{StaticResource Gray500}" HorizontalOptions="Center" />
+        </VerticalStackLayout>
+    </Grid>
+
+</ContentPage>

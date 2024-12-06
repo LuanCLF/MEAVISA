@@ -4,12 +4,23 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:MEAVISA"
-    Shell.FlyoutBehavior="Flyout"
+    xmlns:pages="clr-namespace:MEAVISA.Pages"
+    Shell.FlyoutBehavior="Disabled"
+    
+    Shell.TabBarBackgroundColor="{StaticResource Primary}"
+    
     Title="MEAVISA">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <TabBar >
+        <Tab Title="Início" Icon="Resources/Images/home.svg">
+            <ShellContent ContentTemplate="{DataTemplate pages:HomePage}" />
+        </Tab>
+        <Tab Title="Perfil" Icon="Resources/Images/login.svg">
+            <ShellContent ContentTemplate="{DataTemplate pages:LoginPage}" />
+        </Tab>
+        <Tab Title="Sobre" Icon="Resources/Images/info.svg" >
+            <ShellContent ContentTemplate="{DataTemplate pages:About}" />
+        </Tab>
+    </TabBar>
 
 </Shell>
