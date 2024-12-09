@@ -21,13 +21,13 @@ public partial class HomePage : ContentPage
         foreach (Label item in labels)
         {
             item.Style = (Style)Microsoft.Maui.Controls.Application.Current!.Resources["ulLabel"];
-            containerss.Add(item);
+            ulList.Add(item);
         }
 
     }
 
     private void OnRegisterButtonClicked(object sender, EventArgs e)
     {
-		Navigation.PushAsync(new RegisterPage());
+        Navigation.PushAsync(new RegisterPage());
     }
 }

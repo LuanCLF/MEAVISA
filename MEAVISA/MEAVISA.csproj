@@ -43,7 +43,7 @@
 
 	<ItemGroup>
 		<!-- App Icon -->
-		<MauiIcon Include="Resources\AppIcon\appicon.svg" Color="#15456A" BaseSize="128,128" />
+		<MauiIcon Include="Resources\AppIcon\appicon.svg" color="#15456A" />
 
 		<!-- Splash Screen -->
 		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#15456A" BaseSize="128,128" />
@@ -59,12 +59,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiImage Remove="Resources\Images\icon.svg" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
-		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0" />
+	  <ProjectReference Include="..\MEAVISA.CORE\MEAVISA.CORE.csproj" />
+	  <ProjectReference Include="..\MEAVISA.REPOSITORY\MEAVISA.REPOSITORY.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

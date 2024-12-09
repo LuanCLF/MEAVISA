@@ -2,11 +2,137 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MEAVISA.Pages.RegisterPage"
-             Title="RegisterPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             BackgroundColor="#f9f9f9"
+             Title="Cadastro">
+    
+    <ScrollView>
+        <Grid Margin="35, 5, 35, 20" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Label 
+                Grid.Row="1" 
+                Text="Cadastre-se e receba notificações" 
+                Style="{StaticResource H1}" 
+                FontSize="32" 
+                HorizontalTextAlignment="Center" 
+                Margin="0, 0, 0, 35"/>
+
+            <HorizontalStackLayout 
+                Grid.Row="2" 
+                Spacing="25" 
+                Margin="0,0,0,25" 
+                VerticalOptions="Start">
+                <VerticalStackLayout  x:Name="categoriesList">
+                    <Label Text="Selecione as categorias:" />
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Spacing="15">
+                    <VerticalStackLayout>
+                        <Label 
+                            Text="Selecione o bairro abaixo:"
+                            VerticalOptions="Center" 
+                        />
+                        <Border    
+                            Padding="2">
+                            <Grid>
+                                <Label 
+                                    x:Name="labelPlaceholder"
+                                    Text="Clique aqui"
+                                    VerticalOptions="Center" 
+                                    Style="{StaticResource placeholder}"
+                                    Margin="3,0,0,0"
+                                />
+                                <Picker 
+                                    Title="Bairros"
+                                    x:Name="picker"
+                                    HorizontalOptions="FillAndExpand"
+                                    SelectedIndexChanged="OnPickerSelectionChanged"
+                                />
+                            </Grid>
+                        </Border>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout>
+                        <Label
+                            Text="Quero notificações no:"  />
+                        <HorizontalStackLayout  Padding="0">
+                            <HorizontalStackLayout >
+                                <CheckBox x:Name="preferenceEmail"   CheckedChanged="PreferenceEmail_CheckedChanged"/>
+                                <Label Text="E-mail" VerticalOptions="Center" />
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout >
+                                <CheckBox x:Name="preferenceWhatsApp" CheckedChanged="PreferenceWhatsApp_CheckedChanged"/>
+                                <Label Text="WhatsApp" VerticalOptions="Center"/>
+                            </HorizontalStackLayout>
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+            </HorizontalStackLayout>
+
+            <VerticalStackLayout Grid.Row="3" Spacing="25" Margin="0,0,0,25">
+                <VerticalStackLayout >
+                    <Label Text="E-mail:" Margin="5,0,0,0"/>
+                    <Border    
+                    Padding="2">
+                        <Entry x:Name="emailEntry" Placeholder="RonaldoAlv@gmail.com" Keyboard="Email" TextChanged="EmailEntry_TextChanged" />
+                    </Border>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout >
+                    <Label Text="WhatsApp:"  />
+                    <Grid ColumnSpacing="15">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="40"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Border Padding="2" Grid.Column="0">
+                            <Grid>
+                                <Label 
+                                    x:Name="labelDDD"
+                                    Text="DDD"
+                                    VerticalOptions="Center"
+                                    Style="{StaticResource placeholder}"
+                                    Margin="3,0,0,0"
+                                />
+                                <Picker 
+                                    Title="DDD"
+                                    x:Name="pickerDDD"
+                                    HorizontalOptions="FillAndExpand"
+                                    SelectedIndexChanged="PickerDDD_SelectedIndexChanged"
+                                    WidthRequest="30"
+                                />
+                            </Grid>
+                        </Border>
+                        <Border Padding="2" Grid.Column="1">
+                            <Entry x:Name="whatsappEntry" Placeholder="987166835" Keyboard="Telephone" TextChanged="WhatsappEntry_TextChanged" />
+                        </Border>
+                    </Grid>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout >
+                    <Label Text="Nome:" />
+                    <Border    
+                    Padding="2">
+                        <Entry x:Name="nameEntry" Placeholder="Ronaldo Alves" TextChanged="NameEntry_TextChanged" />
+                    </Border>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout >
+                    <Label Text="Senha:" />
+                    <Border    
+                    Padding="2">
+                        <Entry x:Name="passwordEntry" Placeholder="Digite sua senha.." IsPassword="True" TextChanged="PasswordEntry_TextChanged"/>
+                    </Border>
+                </VerticalStackLayout>
+            </VerticalStackLayout>
+
+            <Button Grid.Row="4" Text="Cadastrar" Clicked="OnRegisterButtonClicked" />
+        </Grid>
+    </ScrollView>
 </ContentPage>

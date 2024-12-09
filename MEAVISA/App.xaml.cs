@@ -1,4 +1,6 @@
-﻿namespace MEAVISA
+﻿using MEAVISA.Pages;
+
+namespace MEAVISA
 {
     public partial class App : Application
     {
@@ -6,7 +8,6 @@
         {
             InitializeComponent();
         }
-
         protected override Window CreateWindow(IActivationState? activationState)
         {
             return new Window(new AppShell());

@@ -8,6 +8,9 @@
     Shell.FlyoutBehavior="Disabled"
     
     Shell.TabBarBackgroundColor="{StaticResource Primary}"
+    Shell.TabBarForegroundColor="{StaticResource White}"
+    Shell.TabBarUnselectedColor="{StaticResource Gray200}"
+    Shell.BackgroundColor="{StaticResource Primary}"
     
     Title="MEAVISA">
 
